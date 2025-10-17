@@ -1,0 +1,100 @@
+body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 3em;              /* 大きくする */
+  text-align: center;          /* ページ中央に揃える */
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; /* 明朝体指定 */
+  margin: 40px 0;              /* 上下に余白を追加 */
+  color: #fff;                 /* 白文字で背景に映える */
+}
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.video-item {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.top-row {
+  display: flex;
+  flex-wrap: nowrap;  
+  align-items: center; /* タイトルを画像の高さ中央に揃える */
+  gap: 30px;
+  margin-left: 20px; /* 画像の左に少しスペース */
+  min-width: 800px;         /* 横幅を固定（必要に応じて調整） */
+  white-space: nowrap;      /* テキストの折り返しを防ぐ */
+
+}
+
+.thumbnail {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.video-title {
+  font-size: 1.8em;
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;  
+}
+
+.description {
+  margin-top: 20px;
+  margin-left: 60px; /* 右から開始（画像の右端よりさらに右） */
+  font-size: 1.4em; /* 文字サイズを大きく */
+  color: #ccc;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.video-item::-webkit-scrollbar {
+  height: 8px; /* 横スクロールバーの高さ */
+  background-color: #000; /* 背景を黒に */
+}
+
+/* スクロールバーのつまみ（ドラッグする部分） */
+.video-item::-webkit-scrollbar-thumb {
+  background-color: #666; /* 濃いグレーで見やすく */
+  border-radius: 4px;
+}
+
+/* スクロールバーの端（オプション） */
+.video-item::-webkit-scrollbar-track {
+  background-color: #000; /* トラック部分も黒に */
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* スクロールバーの幅 */
+  background-color: #000; /* 背景を黒に */
+}
+
+/* スクロールバーのつまみ（ドラッグ部分） */
+body::-webkit-scrollbar-thumb {
+  background-color: #666; /* 濃いグレーで見やすく */
+  border-radius: 5px;
+}
+
+/* スクロールバーのトラック（つまみの下のレーン） */
+body::-webkit-scrollbar-track {
+  background-color: #000; /* トラックも黒に */
+}
