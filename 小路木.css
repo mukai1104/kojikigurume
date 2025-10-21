@@ -6,13 +6,42 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 3em;              /* 大きくする */
-  text-align: center;          /* ページ中央に揃える */
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; /* 明朝体指定 */
-  margin: 40px 0;              /* 上下に余白を追加 */
-  color: #fff;                 /* 白文字で背景に映える */
+.title-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 60px 0;
+  overflow: hidden; /* はみ出す文字を隠す */
 }
+
+.title-line {
+  width: 60%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.title {
+  position: relative;
+  top: 0px; /* ← 100px → 40px に変更 */
+  opacity: 0;
+  font-size: 4em;
+  text-align: center;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  margin: 0;
+  color: #fff;
+}
+
+
+
+
+.intro {
+  text-align: center;
+  font-size: 2em;
+  color: #ddd;
+  margin: 0 20px 40px 20px; /* 左右に余白、下にスペース */
+  line-height: 1.8;
+}
+
 
 .video-list {
   display: flex;
@@ -67,6 +96,7 @@ h1 {
   white-space: nowrap;
 }
 
+/*スクロールバー*/
 .video-item::-webkit-scrollbar {
   height: 8px; /* 横スクロールバーの高さ */
   background-color: #000; /* 背景を黒に */
