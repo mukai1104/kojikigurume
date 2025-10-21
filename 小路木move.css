@@ -1,0 +1,33 @@
+.title, .intro, .video-item {
+  opacity: 0;
+}
+
+/* アニメーション定義 */
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(0px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* アニメーション用クラス */
+.title-animate {
+  animation: slideUp 2s ease-out forwards;
+}
+
+.intro-animate {
+  animation: fadeInUp 2.5s ease-out forwards;
+}
+
+.video-animate {
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* スキップ時の即表示クラス（アニメなし） */
+.title-done, .intro-done, .video-done {
+  transform: translateY(0);
+  opacity: 1;
+}
