@@ -84,6 +84,15 @@ body {
   margin-bottom: 10px; /* スマホ用に限らず常に余白をつけると自然 */
 }
 
+.intro br {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .intro br {
+    display: inline;
+  }
+}
 
 
 .video-list {
@@ -209,26 +218,32 @@ body::-webkit-scrollbar-track {
 .modal-content {
   background-color: #222;
   color: #fff;
-  padding: 30px;
+  padding: 36px;              /* 余白：中間サイズ */
   border-radius: 10px;
   text-align: center;
+  font-size: 1.6em;           /* 本文サイズ：やや大きめ */
+  max-width: 560px;           /* 横幅：やや広め */
+  margin: 0 16px;             /* スマホで左右に余白 */
+}
+
+.modal-content p {
+  margin-bottom: 24px;
+  font-size: 1.8em;           /* 質問文：少し強調 */
 }
 
 .modal-content button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 14px 32px;         /* ボタンサイズ：中間くらい */
+  font-size: 1.4em;           /* ボタン文字：やや大きめ */
   background-color: #444;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
+
+
 .hidden {
   display: none;
-}
-
-/* スクロールバーのトラック（つまみの下のレーン） */
-body::-webkit-scrollbar-track {
-  background-color: #000; /* トラックも黒に */
 }
