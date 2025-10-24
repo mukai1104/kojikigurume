@@ -65,12 +65,25 @@ body {
 
 
 .intro {
-  font-size: 2em;
+  font-size: clamp(1.1em, 2vw, 2em); /* 画面サイズに応じて文字サイズ調整 */
   color: #ddd;
   line-height: 1.8;
   margin-bottom: 40px;
   text-align: center;
+  width: 70%; /* 黒背景に収める */
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+/* スパンを1文ずつブロック表示に */
+.intro span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 10px; /* スマホ用に限らず常に余白をつけると自然 */
+}
+
 
 
 .video-list {
@@ -83,16 +96,10 @@ body {
 
 
 .video-item {
-  background-color: #111;
+  background-color: #222;
   padding: 20px;
   border-radius: 10px;
   overflow-x: auto;
-}
-
-.video-item:hover,
-.video-item:active {
-  background-color: #222; /* より明るいグレーに変更 */
-  transition: background-color 0.3s ease;
 }
 
 
@@ -181,6 +188,44 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #666; /* 濃いグレーで見やすく */
   border-radius: 5px;
+}
+
+/* スクロールバーのトラック（つまみの下のレーン） */
+body::-webkit-scrollbar-track {
+  background-color: #000; /* トラックも黒に */
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 黒背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #222;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 /* スクロールバーのトラック（つまみの下のレーン） */
