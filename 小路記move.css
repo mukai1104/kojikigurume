@@ -13,14 +13,25 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes fadeInLine {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* アニメーション用クラス */
 .title-animate {
   animation: slideUp 2s ease-out forwards;
 }
 
-.intro-animate {
-  animation: fadeInUp 2.5s ease-out forwards;
+.intro-line-animate {
+  animation: fadeInLine 1.5s ease-out forwards;
 }
+
+.intro-animate {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
 
 .video-animate {
   animation: fadeInUp 2s ease-out forwards;
