@@ -2,123 +2,83 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>小路記のグルメ</title>
   <link rel="stylesheet" href="小路記.css">
   <link rel="stylesheet" href="小路記move.css">
-   <script src="小路記.js"></script>
+  <script src="小路記.js" defer></script>
 </head>
 <body>
-  
+
   <div class="title-wrapper">
     <div class="title-image center-content">
-    <img src="img/昼彦２.jpg" alt="小路記のグルメ タイトル画像">
+      <img src="img/サムネ.jpg" alt="小路記のグルメ タイトル画像">
+    </div>
+    <div class="title"><ruby>小路記<rt>こじき</rt></ruby>のグルメ</div>
+    <div class="title-line"></div>
+    </div>
   </div>
-  <div class="title"><ruby>小路記<rt>こじき</rt></ruby>のグルメ</div> <!-- 動く文字 -->
-  <div class="title-line"></div> <!-- 白線（静止） -->
- 
-</div>
 
+  <p class="intro center-content">
+    <span>1人暮らしの大学生でお金に困っている主人公<br>「<ruby>小路<rt>こじ</rt></ruby><ruby>貴琉<rt>たかる</rt></ruby>」</span>
+    <span>食べるものがない貴琉に<br>格安で料理を作ってくれるゲストが登場</span>
+    <span>安くおいしく食べられる料理をドラマ形式で皆様にご紹介</span>
+  </p>
 
-<p class="intro center-content">
-  <span>1人暮らしの大学生でお金に困っている主人公<br>「<ruby>小路<rt>こじ</rt></ruby><ruby>貴琉<rt>たかる</rt></ruby>」</span>
-  <span>食べるものがない貴琉に<br>格安で料理を作ってくれるゲストが登場</span>
-  <span>安くおいしく食べられる料理をドラマ形式で皆様にご紹介</span>
-</p>
+  <div class="video-list">
 
-<div class="video-list">
-
-    <div class="video-item">
+    <div class="video-item" data-episode="話/1話.html">
       <div class="top-row">
-        <a href="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4" target="_blank" class="thumbnail-wrapper">
-          <img src="img/sotu.png" alt="第1話" class="thumbnail">
-            <div class="play-overlay">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
-              <polygon points="40,30 70,50 40,70" fill="white" />
-            </svg>
-          </div>
-        </a>
-
+        <div class="thumbnail-wrapper">
+          <img src="img/第1話.png" alt="第1話" class="thumbnail"draggable="false">
+        </div>
         <h2 class="video-title">第1話：</h2>
       </div>
-      <p class="description">
-        大学から友道と帰る途中、最近食べれていない事実を打ち明ける貴琉。<br>
-        それを聞いた友達が...
-      </p>
+      <p class="description">大学から友道と帰る途中、最近食べれていない事実を打ち明ける貴琉。<br>それを聞いた友達が...</p>
     </div>
 
-    <div class="video-item"> 
+    <div class="video-item" data-episode="話/2話.html">
       <div class="top-row">
-       <a href="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4" target="_blank" class="thumbnail-wrapper">
-          <img src="img/sotu.png" alt="第2話" class="thumbnail">
-            <div class="play-overlay">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
-              <polygon points="40,30 70,50 40,70" fill="white" />
-            </svg>
-          </div>
-        </a>
+        <div class="thumbnail-wrapper">
+          <img src="img/第2話.png" alt="第2話" class="thumbnail" draggable="false">
+
+        </div>
         <h2 class="video-title">第2話：</h2>
       </div>
-      <p class="description">これはエピソード1の説明文です。内容の概要などを記載します。</p>
+      <p class="description">帰宅寸前、漂う香ばしい匂い、玄関に並ぶ見慣れない靴。<br>その先で貴琉待っていたのは...</p>
     </div>
 
-    <div class="video-item">
+
+    <div class="video-item" data-episode="話/3話.html">
       <div class="top-row">
-        <a href="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4" target="_blank" class="thumbnail-wrapper">
-          <img src="img/sotu.png" alt="第3話" class="thumbnail">
-            <div class="play-overlay">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
-              <polygon points="40,30 70,50 40,70" fill="white" />
-            </svg>
-          </div>
-        </a>
+        <div class="thumbnail-wrapper">
+          <img src="img/第3話.png" alt="第3話" class="thumbnail" draggable="false">
+        </div>
         <h2 class="video-title">第3話：</h2>
       </div>
-      <p class="description">これはエピソード1の説明文です。内容の概要などを記載します。</p>
+      <p class="description">先輩に勉強を教えてもらい、解散の間際でごはんのお誘いを受ける貴琉。<br>彼の出した答えとは...</p>
     </div>
 
-    <div class="video-item">
+    <div class="video-item" data-episode="話/4話.html">
       <div class="top-row">
-        <a href="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4" target="_blank" class="thumbnail-wrapper">
-          <img src="img/sotu.png" alt="第4話" class="thumbnail">
-            <div class="play-overlay">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
-              <polygon points="40,30 70,50 40,70" fill="white" />
-            </svg>
-          </div>
-        </a>
+        <div class="thumbnail-wrapper">
+          <img src="img/第4話.png" alt="第4話" class="thumbnail" draggable="false">
+        </div>
         <h2 class="video-title">第4話：</h2>
       </div>
-      <p class="description">これはエピソード1の説明文です。内容の概要などを記載します。</p>
+      <p class="description">家で食べるものもなくダラダラしていた貴琉。<br>すると急にインターホンが鳴り...</p>
     </div>
-
-    <div class="video-item">
+    
+   <div class="video-item" data-episode="話/5話.html">
       <div class="top-row">
-        <a href="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4" target="_blank" class="thumbnail-wrapper">
-          <img src="img/sotu.png" alt="第5話" class="thumbnail">
-            <div class="play-overlay">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
-              <polygon points="40,30 70,50 40,70" fill="white" />
-            </svg>
-          </div>
-        </a>
+        <div class="thumbnail-wrapper">
+          <img src="img/第5話.png" alt="第5話" class="thumbnail" draggable="false">
+        </div>
         <h2 class="video-title">第5話：</h2>
       </div>
-      <p class="description">これはエピソード1の説明文です。内容の概要などを記載します。</p>
+      <p class="description">今までお世話になった人を集めた貴琉。<br>彼の思惑とは...</p>
     </div>
     
 </div>
-<div id="confirmModal" class="modal hidden">
-  <div class="modal-content">
-    <p>この動画を再生しますか？</p>
-    <button id="playBtn">再生する</button>
-    <button id="cancelBtn">再生しない</button>
-  </div>
-</div>
-
 </body>
 </html>
