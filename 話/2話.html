@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第2話｜小路記のグルメ</title>
+  <link rel="stylesheet" href="話.css">
+  <link rel="stylesheet" href="話.move.css">
+   <script src="話.js"></script>
+</head>
+<body>
+  
+  <!-- 戻るボタン -->
+  <a href="../小路記.html" class="back-button">←</a>
+
+  <!-- あらすじ -->
+  <div class="episode-description">
+    <h2>あらすじ</h2>
+    <p>帰宅寸前、漂う香ばしい匂い、玄関に並ぶ見慣れない靴。<br>その先で貴琉待っていたのは...
+  </div>
+
+  <!-- 動画セクション -->
+  <div class="video-section" >
+    <div class="video-thumbnail-wrapper" data-video="https://youtu.be/33WaCwwLbuw?si=Jp_GYyQPKze990p4">
+      <img src="../img/第2話.png" alt="第2話サムネイル" class="video-thumbnail" draggable="false">
+       <div class="play-overlay"id="playTrigger">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" fill="rgba(0,0,0,0.5)" />
+              <polygon points="40,30 70,50 40,70" fill="white" />
+            </svg>
+          </div>
+    </div>
+  </div>
+
+  <!-- 再生確認モーダル -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <p>この動画を再生しますか？</p>
+      <button id="playBtn">再生する</button>
+      <button id="cancelBtn">キャンセル</button>
+    </div>
+  </div>
+
+  <!-- 前後話数ナビ -->
+  <div class="episode-nav">
+    <a href="1話.html" class="nav-button">← 前の話</a>
+    <a href="3話.html" class="nav-button">次の話 →</a>
+  </div>
+
+  <!-- レシピ -->
+  <div class="recipe-section">
+    <h2>今回の料理</h2>
+    <div class="recipe-content">
+    <ul>
+      <li>かぼちゃ：2切れ：20円</li>
+      <li>ピーマン：1個：33円</li>
+      <li>人参：1/4：14円</li>
+      <li>玉ねぎ：1/4：14円</li>
+      <li>天ぷら粉：100g：37円</li>
+      <li>マヨネーズ：大さじ1：9円</li>
+      <li>水：150ml：ほぼ0円</li>
+      <li>油：15円</li>
+      <li>累計142円</li>
+    </ul>
+      <div class="recipe-image">
+      <img src="../img/天ぷら.png" alt="今回の料理画像">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

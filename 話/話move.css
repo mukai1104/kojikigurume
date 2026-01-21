@@ -1,0 +1,20 @@
+.title, .episode-description, .video-section, .episode-nav, .recipe-section {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-animate,
+.description-animate,
+.video-animate,
+.nav-animate,
+.recipe-animate {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
