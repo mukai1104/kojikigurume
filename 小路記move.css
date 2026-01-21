@@ -25,11 +25,11 @@
 }
 
 .intro-line-animate {
-  animation: fadeInLine 1.5s ease-out forwards;
+  animation: fadeInLine 1s ease-out forwards;
 }
 
 .intro-animate {
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeInUp 0s ease-out forwards;
 }
 
 
