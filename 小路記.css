@@ -35,6 +35,213 @@ body {
 }
 
 
+.title-image img {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #fff;   /* 白い枠線 */
+  border-radius: 8px; 
+  object-fit: cover;
+  display: block; /* ← これが重要！ */
+  object-position: center center;
+}
+
+
+
+.title-line {
+  width: 60%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.title {
+  position: relative;
+  top: 0px; /* ← 100px → 40px に変更 */
+  opacity: 0;
+  font-size: 2.6em;
+  text-align: center;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  margin: 0;
+  color: #fff;
+}
+
+
+
+
+.intro {
+  font-size: clamp(1em, 1.5vw, 1.5em); /* 画面サイズに応じて文字サイズ調整 */
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 70%; /* 黒背景に収める */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* スパンを1文ずつブロック表示に */
+.intro span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 10px; /* スマホ用に限らず常に余白をつけると自然 */
+}
+
+.intro br {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .intro br {
+    display: inline;
+  }
+}
+
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 60%;         /* 白線と同じ幅に揃える */
+  margin: 0 auto;     /* 中央寄せ */
+}
+
+
+.video-item {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.video-item:hover{
+  background-color: #303030; /* 少し明るめに */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 影をつける */
+  cursor: pointer;
+}
+
+.top-row {
+  display: flex;
+  flex-wrap: nowrap;  
+  align-items: center; /* タイトルを画像の高さ中央に揃える */
+  gap: 30px;
+  min-width: 800px;         /* 横幅を固定（必要に応じて調整） */
+  white-space: nowrap;      /* テキストの折り返しを防ぐ */
+
+}
+
+.thumbnail {
+  width: 225px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.thumbnail-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.thumbnail-wrapper:hover .play-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.video-title {
+  font-size: 2em;
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;  
+}
+
+.description {
+  margin-top: 20px;
+  margin-left: 0; /* または 20px などに調整 */
+  font-size: 1.2em;
+  color: #ccc;
+  line-height: 1.6;
+   white-space: nowrap; 
+}
+
+/*スクロールバー*/
+.video-item::-webkit-scrollbar {
+  height: 8px; /* 横スクロールバーの高さ */
+  background-color: #000; /* 背景を黒に */
+}
+
+/* スクロールバーのつまみ（ドラッグする部分） */
+.video-item::-webkit-scrollbar-thumb {
+  background-color: #666; /* 濃いグレーで見やすく */
+  border-radius: 4px;
+}
+
+/* スクロールバーの端（オプション） */
+.video-item::-webkit-scrollbar-track {
+  background-color: #000; /* トラック部分も黒に */
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* スクロールバーの幅 */
+  background-color: #000; /* 背景を黒に */
+}
+
+/* スクロールバーのつまみ（ドラッグ部分） */
+body::-webkit-scrollbar-thumb {
+  background-color: #666; /* 濃いグレーで見やすく */
+  border-radius: 5px;
+}
+
+/* スクロールバーのトラック（つまみの下のレーン） */
+body::-webkit-scrollbar-track {
+  background-color: #000; /* トラックも黒に */
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 黒背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #222;
+  color: #fff;
+  padding: 36px;              /* 余白：中間サイズ */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.6em;           /* 本文サイズ：やや大きめ */
+  max-width: 560px;           /* 横幅：やや広め */
+  margin: 0 16px;             /* スマホで左右に余白 */
+}
+
+.modal-content p {
+  margin-bottom: 24px;
+  font-size: 1.8em;           /* 質問文：少し強調 */
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 14px 32px;         /* ボタンサイズ：中間くらい */
+  font-size: 1.4em;           /* ボタン文字：やや大きめ */
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+.hidden {
+  display: none;
+}
+
+
 
 .hidden {
   display: none;
