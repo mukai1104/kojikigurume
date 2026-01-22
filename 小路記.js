@@ -1,83 +1,90 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小路記のグルメ</title>
-  <link rel="stylesheet" href="小路記.css">
-  <link rel="stylesheet" href="小路記move.css">
-  <script src="小路記.js" defer></script>
-</head>
-<body>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector(".title");
+  const intro = document.querySelector(".intro");
+  const videos = document.querySelectorAll(".video-item");
 
-  <div class="title-wrapper">
-    <div class="title-image center-content">
-      <img src="img/サムネ.jpg" alt="小路記のグルメ タイトル画像">
-    </div>
-    <div class="title"><ruby>小路記<rt>こじき</rt></ruby>のグルメ</div>
-    <div class="title-line"></div>
-    </div>
-  </div>
+  let spanTimers = [];
+  let introAnimationStarted = false;
 
-  <p class="intro center-content">
-    <span>1人暮らしの大学生でお金に困っている主人公<br>「<ruby>小路<rt>こじ</rt></ruby><ruby>貴琉<rt>たかる</rt></ruby>」</span>
-    <span>食べるものがない貴琉に<br>格安で料理を作ってくれるゲストが登場</span>
-    <span>安くおいしく食べられる料理をドラマ形式で皆様にご紹介</span>
-  </p>
+  const hasVisited = sessionStorage.getItem("visited");
 
-  <div class="video-list">
+  if (!hasVisited) {
+    // 初回アクセス時のみアニメーション実行
+    sessionStorage.setItem("visited", "true");
 
-    <div class="video-item" data-episode="話/1話.html">
-      <div class="top-row">
-        <div class="thumbnail-wrapper">
-          <img src="img/第1話.png" alt="第1話" class="thumbnail"draggable="false">
-        </div>
-        <h2 class="video-title">第1話：友の焼きそば</h2>
-      </div>
-      
-    </div>
+    title.classList.add("title-animate");
 
-    <div class="video-item" data-episode="話/2話.html">
-      <div class="top-row">
-        <div class="thumbnail-wrapper">
-          <img src="img/第2話.png" alt="第2話" class="thumbnail" draggable="false">
+    title.addEventListener("animationend", () => {
+      intro.classList.add("intro-animate");
+    });
 
-        </div>
-        <h2 class="video-title">第2話：弟の天ぷら</h2>
-      </div>
-    </div>
+    intro.addEventListener("animationend", () => {
+      if (introAnimationStarted) return;
+      introAnimationStarted = true;
 
+      const spans = intro.querySelectorAll("span");
 
-    <div class="video-item" data-episode="話/3話.html">
-      <div class="top-row">
-        <div class="thumbnail-wrapper">
-          <img src="img/第3話.png" alt="第3話" class="thumbnail" draggable="false">
-        </div>
-        <h2 class="video-title">第3話：先輩のニラモヤシ炒め</h2>
-      </div>
-    </div>
+      spans.forEach((span, i) => {
+        const timerId = setTimeout(() => {
+          span.classList.add("intro-line-animate");
+        }, i * 2000);
+        spanTimers.push(timerId);
+      });
 
-    <div class="video-item" data-episode="話/4話.html">
-      <div class="top-row">
-        <div class="thumbnail-wrapper">
-          <img src="img/第4話.png" alt="第4話" class="thumbnail" draggable="false">
-        </div>
-        <h2 class="video-title">第4話：親父の生姜焼き</h2>
-      </div>
-    </div>
-    
-   <div class="video-item" data-episode="話/5話.html">
-      <div class="top-row">
-        <div class="thumbnail-wrapper">
-          <img src="img/第5話.png" alt="第5話" class="thumbnail" draggable="false">
-        </div>
-        <h2 class="video-title">第5話：貴琉のお好み焼き</h2>
-      </div>
-    </div>
-    
-</div>
-</body>
-</html>
+      const lastSpanDelay = (spans.length - 1) * 2000;
+      const lastSpanDuration = 1500;
+      const buffer = 300;
+
+      setTimeout(() => {
+        videos.forEach(v => v.classList.add("video-animate"));
+      }, lastSpanDelay + lastSpanDuration + buffer);
+    });
+
+    // スキップ機能（クリック or タップ）
+    const skipAnimations = () => {
+      title.classList.remove("title-animate");
+      intro.classList.remove("intro-animate");
+      videos.forEach(v => v.classList.remove("video-animate"));
+
+      title.classList.add("title-done");
+      intro.classList.add("intro-done");
+      videos.forEach(v => v.classList.add("video-done"));
+
+      const spans = intro.querySelectorAll("span");
+      spanTimers.forEach(id => clearTimeout(id));
+      spanTimers = [];
+      spans.forEach(span => {
+        span.classList.remove("intro-line-animate");
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      });
+    };
+
+    document.addEventListener("click", skipAnimations);
+    document.addEventListener("touchstart", skipAnimations);
+  } else {
+    // 2回目以降は即表示
+    title.classList.add("title-done");
+    intro.classList.add("intro-done");
+    videos.forEach(v => v.classList.add("video-done"));
+
+    const spans = intro.querySelectorAll("span");
+    spans.forEach(span => {
+      span.style.opacity = "1";
+      span.style.transform = "translateY(0)";
+    });
+  }
+
+  // 動画アイテムクリックでローカルページに遷移
+  videos.forEach(item => {
+    item.addEventListener("click", () => {
+      const episodePath = item.getAttribute("data-episode");
+      if (episodePath) {
+        window.location.href = episodePath;
+      }
+    });
+  });
+});
     });
   });
 });
