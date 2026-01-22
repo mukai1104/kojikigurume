@@ -155,15 +155,6 @@ body {
   white-space: nowrap;  
 }
 
-.description {
-  margin-top: 20px;
-  margin-left: 0; /* または 20px などに調整 */
-  font-size: 1.2em;
-  color: #ccc;
-  line-height: 1.6;
-   white-space: nowrap; 
-}
-
 /*スクロールバー*/
 .video-item::-webkit-scrollbar {
   height: 8px; /* 横スクロールバーの高さ */
@@ -233,12 +224,6 @@ body::-webkit-scrollbar-track {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-}
-
-
-
-.hidden {
-  display: none;
 }
 
 
